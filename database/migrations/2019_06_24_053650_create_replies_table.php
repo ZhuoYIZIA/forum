@@ -21,6 +21,8 @@ class CreateRepliesTable extends Migration
             $table->integer('user_id');
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
             $table->timestamps();
+
+            //cascade is question are deleted then all of the question childs shoud be deleted
         });
     }
 
